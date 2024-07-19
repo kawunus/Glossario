@@ -109,6 +109,7 @@
             style="@style/registerTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="@string/sign_in_forget_password"
             android:textColor="@color/forgetPassword"

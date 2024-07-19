@@ -28,6 +28,10 @@ class RegisterActivity : AppCompatActivity() {
                     binding.passwordEditText.text.toString(),
                 )
             }
+
+            binding.forgetPasswordTextView.setOnClickListener {
+                helper.resetPassword(binding.emailEditText.text.toString())
+            }
         } else {
 
             binding.signUpButton.setOnClickListener {

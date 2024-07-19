@@ -19,16 +19,11 @@ class AccountHelper(private val act: RegisterActivity) {
                     if (task.isSuccessful) {
 
                     } else {
-                        Toast.makeText(
-                            act,
-                            act.getString(R.string.sign_up_error_firebase),
-                            Toast.LENGTH_LONG
-                        ).show()
+                        showErrorToast(act.getString(R.string.sign_up_error_firebase))
                     }
                 }
         } else {
-            Toast.makeText(act, act.getString(R.string.sign_up_error_empty), Toast.LENGTH_LONG)
-                .show()
+            showErrorToast(act.getString(R.string.sign_up_error_empty))
         }
     }
 
@@ -42,16 +37,34 @@ class AccountHelper(private val act: RegisterActivity) {
                     if (task.isSuccessful) {
 
                     } else {
-                        Toast.makeText(
-                            act,
-                            act.getString(R.string.sign_in_error_firebase),
-                            Toast.LENGTH_LONG
-                        ).show()
+                        showErrorToast(act.getString(R.string.sign_in_error_firebase))
                     }
                 }
         } else {
-            Toast.makeText(act, act.getString(R.string.sign_in_error_empty), Toast.LENGTH_LONG)
-                .show()
+            showErrorToast(act.getString(R.string.sign_in_error_empty))
         }
+    }
+
+    fun resetPassword(email: String) {
+        if (email.isNotEmpty()) {
+            act.mAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener{
+                    task->
+                    if (task.isSuccessful)
+                    {
+                        
+                    }
+                    else {
+                        showErrorToast(act.getString(R.string.reset_error_firebase))
+                    }
+                }
+        } else {
+            showErrorToast(act.getString(R.string.reset_empty))
+        }
+    }
+
+    private fun showErrorToast(message: String) {
+        Toast.makeText(act, message, Toast.LENGTH_LONG)
+            .show()
     }
 }

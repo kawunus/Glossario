@@ -4,6 +4,7 @@
     <!-- StartActivity -->
     <string name="create_account">Создать аккаунт</string>
     <!-- RegisterActivity -->
+    <!-- Sign Up Strings -->
     <string name="sign_up_with">Войдите через</string>
     <string name="sign_up_with_email">Или зарегистрируйтесь по электронной почте</string>
     <string name="sign_up_birthday_date">Дата рождения</string>
@@ -13,11 +14,15 @@
     <string name="sign_up_example_email">email@example.com</string>
     <string name="sign_up_example_password">********</string>
     <string name="sign_up">Зарегистрироваться</string>
-    <string name="sign_in_with_email">Или войдите по электронной почте</string>
-    <string name="sign_in">Войти</string>
     <string name="sign_up_error_empty">Вы не заполнили все поля для регистрации!</string>
     <string name="sign_up_error_firebase">При создании вашего аккаунта произошла ошибка. Повторите еще раз</string>
+    <!-- Sign In Strings -->
+    <string name="sign_in_with_email">Или войдите по электронной почте</string>
+    <string name="sign_in">Войти</string>
     <string name="sign_in_forget_password"><u>Забыли пароль?</u></string>
     <string name="sign_in_error_empty">Вы не заполнили все поля для входа!</string>
     <string name="sign_in_error_firebase">При входе в ваш аккаунт произошла ошибка. Повторите еще раз</string>
+    <!-- Reset Strings -->
+    <string name="reset_empty">Пожалуйста, укажите вашу почту</string>
+    <string name="reset_error_firebase">Произошла ошибка при отправке ссылки-сброса на ваш email!</string>
 </resources>
