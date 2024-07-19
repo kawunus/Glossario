@@ -104,6 +104,16 @@
             android:inputType="textPassword"
             android:textColorHint="@color/editTextColor" />
 
+        <TextView
+            android:id="@+id/forgetPasswordTextView"
+            style="@style/registerTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_in_forget_password"
+            android:textColor="@color/forgetPassword"
+            android:visibility="gone" />
+
 
         <Button
             android:id="@+id/signUpButton"

@@ -17,5 +17,5 @@
     <string name="sign_in">Войти</string>
     <string name="sign_up_error_empty">Вы не заполнили все поля для регистрации!</string>
     <string name="sign_up_error_firebase">При создании вашего аккаунта произошла ошибка. Повторите еще раз</string>
-
+    <string name="sign_in_forget_password"><u>Забыли пароль?</u></string>
 </resources>

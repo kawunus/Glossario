@@ -42,6 +42,7 @@ class RegisterActivity : AppCompatActivity() {
         titleTextView.setText(R.string.sign_in_with_email)
         birthdayEditText.visibility = View.GONE
         birthdayTextView.visibility = View.GONE
+        forgetPasswordTextView.visibility = View.GONE
         signUpButton.setText(R.string.sign_in)
     }
 }
