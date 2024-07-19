@@ -31,4 +31,27 @@ class AccountHelper(private val act: RegisterActivity) {
                 .show()
         }
     }
+
+    fun signInWithEmail(
+        email: String,
+        password: String
+    ) {
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            act.mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+
+                    } else {
+                        Toast.makeText(
+                            act,
+                            act.getString(R.string.sign_in_error_firebase),
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+        } else {
+            Toast.makeText(act, act.getString(R.string.sign_in_error_empty), Toast.LENGTH_LONG)
+                .show()
+        }
+    }
 }

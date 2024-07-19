@@ -22,6 +22,12 @@ class RegisterActivity : AppCompatActivity() {
 
         if (intent.getStringExtra("TYPE") == "login") {
             updateUi()
+            binding.signUpButton.setOnClickListener {
+                helper.signInWithEmail(
+                    binding.emailEditText.text.toString(),
+                    binding.passwordEditText.text.toString(),
+                )
+            }
         } else {
 
             binding.signUpButton.setOnClickListener {
@@ -42,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
         titleTextView.setText(R.string.sign_in_with_email)
         birthdayEditText.visibility = View.GONE
         birthdayTextView.visibility = View.GONE
-        forgetPasswordTextView.visibility = View.GONE
+        forgetPasswordTextView.visibility = View.VISIBLE
         signUpButton.setText(R.string.sign_in)
     }
 }
