@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Glossario</string>
+
+    <!-- RegisterActivity -->
+    <string name="sign_up_with">Войдите через</string>
+    <string name="sign_up_with_email">Или зарегистрируйтесь по электронной почте</string>
+    <string name="sign_up_birthday_date">Дата рождения</string>
+    <string name="sign_up_email">Адрес электронной почты</string>
+    <string name="sign_up_password">Пароль</string>
+    <string name="sign_up_example_birthday_date">09.02.2006</string>
+    <string name="sign_up_example_email">email@example.com</string>
+    <string name="sign_up_example_password">********</string>
+    <string name="sign_up">Зарегистрироваться</string>
+
 </resources>
