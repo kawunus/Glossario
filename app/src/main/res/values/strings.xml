@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Glossario</string>
 
+    <!-- StartActivity -->
+    <string name="create_account">Создать аккаунт</string>
     <!-- RegisterActivity -->
     <string name="sign_up_with">Войдите через</string>
     <string name="sign_up_with_email">Или зарегистрируйтесь по электронной почте</string>

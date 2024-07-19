@@ -1,14 +1,22 @@
 package com.kawunus.glossario
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.kawunus.glossario.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        init()
+        setContentView(binding.root)
+
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
+    }
+
+    private fun init() {
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
     }
 }
