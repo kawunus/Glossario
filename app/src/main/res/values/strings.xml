@@ -12,4 +12,8 @@
     <string name="sign_up_example_password">********</string>
     <string name="sign_up">Зарегистрироваться</string>
 
+    <!-- LoginActivity -->
+    <string name="sign_in_with_email">Или войдите по электронной почте</string>
+    <string name="sign_in">Войти</string>
+
 </resources>
