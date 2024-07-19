@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -96,13 +97,22 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_up_password" />
 
-        <EditText
-            android:id="@+id/passwordEditText"
-            style="@style/registerEditTextStyle"
-            android:drawableStart="@drawable/ic_lock"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
             android:hint="@string/sign_up_example_password"
-            android:inputType="textPassword"
-            android:textColorHint="@color/editTextColor" />
+            android:textColorHint="@color/editTextColor"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_lock"
+                android:inputType="textPassword"
+                 />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/forgetPasswordTextView"

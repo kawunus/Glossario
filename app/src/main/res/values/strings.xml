@@ -10,9 +10,9 @@
     <string name="sign_up_birthday_date">Дата рождения</string>
     <string name="sign_up_email">Адрес электронной почты</string>
     <string name="sign_up_password">Пароль</string>
-    <string name="sign_up_example_birthday_date">09.02.2006</string>
-    <string name="sign_up_example_email">email@example.com</string>
-    <string name="sign_up_example_password">********</string>
+    <string name="sign_up_example_birthday_date">Дата рождения</string>
+    <string name="sign_up_example_email">Адрес электронной почты</string>
+    <string name="sign_up_example_password">Пароль</string>
     <string name="sign_up">Зарегистрироваться</string>
     <string name="sign_up_error_empty">Вы не заполнили все поля для регистрации!</string>
     <string name="sign_up_error_firebase">При создании вашего аккаунта произошла ошибка. Повторите еще раз</string>
