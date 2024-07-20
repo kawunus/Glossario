@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="mainColor">#7653EB</color>
+    <color name="registerButtonColor">#FFFFFF</color>
+    <color name="registerButtonStrokeColor">#FF000000</color>
+    <color name="editTextBackgroundColor">#E6E8EB</color>
+    <color name="editTextColor">#AEAFB4</color>
+    <color name="forgetPassword">#0645AD</color>
 </resources>

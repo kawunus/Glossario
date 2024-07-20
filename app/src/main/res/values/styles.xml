@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="registerTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/yandex_sans_display_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingVertical">6dp</item>
+    </style>
+
+    <style name="registerEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:lines">1</item>
+        <item name="android:fontFamily">@font/yandex_sans_display_regular</item>
+        <item name="android:drawableTint">@color/editTextColor</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:textColorHint">@color/editTextColor</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="regiser_text_style">
+        <item name="android:textSize">19sp</item>
+        <item name="fontFamily">@font/yandex_sans_display_regular</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

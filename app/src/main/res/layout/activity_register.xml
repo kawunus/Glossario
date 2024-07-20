@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:navigationIcon="@drawable/ic_arrow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp">
+
+
+        <TextView
+            style="@style/registerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_with" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/signUpGoogleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+
+                android:background="@drawable/rounded_button"
+                android:paddingVertical="12dp"
+                android:src="@drawable/ic_google" />
+
+            <ImageButton
+                android:id="@+id/signUpFacebookButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button"
+                android:paddingVertical="12dp"
+                android:src="@drawable/ic_facebook" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/registerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_with_email" />
+
+        <TextView
+            android:id="@+id/birthdayTextView"
+            style="@style/registerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_birthday_date" />
+
+        <EditText
+            android:id="@+id/birthdayEditText"
+            style="@style/registerEditTextStyle"
+            android:drawableStart="@drawable/ic_date"
+            android:hint="@string/sign_up_example_birthday_date"
+            android:inputType="date"
+            android:textColorHint="@color/editTextColor" />
+
+        <TextView
+            style="@style/registerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_email" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            style="@style/registerEditTextStyle"
+            android:drawableStart="@drawable/ic_email"
+            android:hint="@string/sign_up_example_email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/editTextColor" />
+
+        <TextView
+            style="@style/registerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_password" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:hint="@string/sign_up_example_password"
+            android:textColorHint="@color/editTextColor"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                style="@style/registerEditTextStyle"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_lock"
+                android:inputType="textPassword"
+                 />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgetPasswordTextView"
+            style="@style/registerTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/sign_in_forget_password"
+            android:textColor="@color/forgetPassword"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/signUpButton"
+            style="@style/registerEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

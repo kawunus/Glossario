@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="90dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/signInButton"
+            style="@style/regiser_text_style"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/mainColor"
+            android:paddingVertical="18dp"
+            android:text="@string/sign_in"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/signUpTextView"
+            style="@style/regiser_text_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="42dp"
+            android:text="@string/create_account"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
