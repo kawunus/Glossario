@@ -2,6 +2,7 @@ package AccountHelper
 
 import android.content.Intent
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.edit
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -10,6 +11,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.kawunus.glossario.MainActivity
 import com.kawunus.glossario.R
 import com.kawunus.glossario.RegisterActivity
+
 
 class AccountHelper(private val act: RegisterActivity) {
     private lateinit var signInClient: GoogleSignInClient
@@ -104,6 +106,7 @@ class AccountHelper(private val act: RegisterActivity) {
         }
 
         val intent = Intent(act, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         act.startActivity(intent)
         act.finish()
     }

@@ -85,4 +85,5 @@ class RegisterActivity : AppCompatActivity() {
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
+
 }
