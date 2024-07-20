@@ -41,6 +41,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/editTextBackgroundColor"
+                android:contentDescription="@string/content_description_google_icon"
                 android:paddingVertical="12dp"
                 android:src="@drawable/ic_google" />
 
@@ -52,6 +53,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/editTextBackgroundColor"
+                android:contentDescription="@string/content_description_facebook_icon"
                 android:paddingVertical="12dp"
                 android:src="@drawable/ic_facebook" />
         </LinearLayout>
@@ -132,8 +134,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/mainColor"
+            android:paddingVertical="8dp"
             android:text="@string/sign_up"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="19sp" />
     </LinearLayout>
 </LinearLayout>

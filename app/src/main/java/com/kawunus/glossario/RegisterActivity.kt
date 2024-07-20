@@ -1,7 +1,7 @@
 package com.kawunus.glossario
 
-import AccountHelper.AccountHelper
-import AccountHelper.GoogleConst
+import com.kawunus.glossario.accountHelper.AccountHelper
+import com.kawunus.glossario.accountHelper.GoogleConst
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
