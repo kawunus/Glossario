@@ -22,8 +22,9 @@
     <string name="sign_in_forget_password"><u>Забыли пароль?</u></string>
     <string name="sign_in_error_empty">Вы не заполнили все поля для входа!</string>
     <string name="sign_in_error_firebase">При входе в ваш аккаунт произошла ошибка. Повторите еще раз</string>
+    <string name="sign_in_error_google">Произошла ошибка при входе по Google аккаунту. Попробуйте снова!</string>
     <!-- Reset Strings -->
     <string name="reset_empty">Пожалуйста, укажите вашу почту</string>
     <string name="reset_error_firebase">Произошла ошибка при отправке ссылки-сброса на ваш email!</string>
-    <string name="sign_in_error_google">Произошла ошибка при входе по Google аккаунту. Попробуйте снова!</string>
+    <string name="reset_message">Письмо с ссылкой на изменение пароля было отправлено на вашу почту</string>
 </resources>
