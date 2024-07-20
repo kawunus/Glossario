@@ -17,12 +17,14 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent(this@StartActivity, RegisterActivity::class.java)
             intent.putExtra("TYPE","login")
             startActivity(intent)
+
         }
 
         binding.signUpTextView.setOnClickListener {
             val intent = Intent(this@StartActivity, RegisterActivity::class.java)
             intent.putExtra("TYPE","register")
             startActivity(intent)
+
         }
     }
 

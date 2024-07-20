@@ -1,8 +1,9 @@
 package com.kawunus.glossario
 
-import AccountHelper.AccountHelper
-import AccountHelper.GoogleConst
+import com.kawunus.glossario.accountHelper.AccountHelper
+import com.kawunus.glossario.accountHelper.GoogleConst
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -14,6 +15,7 @@ import com.kawunus.glossario.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
+    lateinit var prefs: SharedPreferences
     val mAuth = FirebaseAuth.getInstance()
     private val helper = AccountHelper(this)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +57,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun init() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
+        prefs = getSharedPreferences("profile", MODE_PRIVATE)
     }
 
     private fun updateUi() = with(binding) {
@@ -71,8 +74,7 @@ class RegisterActivity : AppCompatActivity() {
             try {
                 val account = task.getResult(ApiException::class.java)
                 if (account != null) {
-                    helper.signInFirebaseWithGoogle(account.idToken!!)
-
+                    helper.signInFirebaseWithGoogle(account.idToken!!, account.email!!)
                 }
             } catch (e: ApiException) {
                 Toast.makeText(
@@ -83,4 +85,5 @@ class RegisterActivity : AppCompatActivity() {
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
+
 }
