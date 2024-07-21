@@ -38,9 +38,14 @@
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
     </style>
-    
+
     <style name="BottomNavigationViewTextStyle">
         <item name="android:fontFamily">@font/yandex_sans_display_regular</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/mainColor</item>
+
     </style>
 </resources>
