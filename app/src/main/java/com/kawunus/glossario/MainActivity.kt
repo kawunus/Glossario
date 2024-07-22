@@ -15,7 +15,11 @@ class MainActivity : AppCompatActivity() {
         init()
         setContentView(binding.root)
         replaceFragment(Home())
-        if (prefs.getString("status", "noreg") == "noreg") {
+        if (prefs.getString(
+                PrefsKeys.ProfileKeys.USER_STATUS,
+                PrefsKeys.ProfileKeys.UserStatus.NOT_REGISTER
+            ) == PrefsKeys.ProfileKeys.UserStatus.NOT_REGISTER
+        ) {
             val intent = Intent(this@MainActivity, StartActivity::class.java)
             startActivity(intent)
             finish()

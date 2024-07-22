@@ -16,13 +16,14 @@
             android:layout_height="110dp"
             android:layout_marginTop="40dp"
             android:src="@drawable/ic_person_circle" />
+
         <TextView
             android:id="@+id/emailTextView"
+            style="@style/TextViewStartStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/sign_up_email"
-            style="@style/TextViewStartStyle"/>
+            android:text="@string/sign_up_email" />
 
     </LinearLayout>
 

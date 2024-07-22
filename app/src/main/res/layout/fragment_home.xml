@@ -8,8 +8,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home fragment"
         android:layout_gravity="center"
-        android:textSize="26dp"/>
+        android:text="Home fragment"
+        android:textSize="26dp" />
 
 </FrameLayout>

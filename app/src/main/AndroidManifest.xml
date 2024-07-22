@@ -26,8 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".StartActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

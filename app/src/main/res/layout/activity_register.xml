@@ -66,18 +66,18 @@
             android:text="@string/sign_up_with_email" />
 
         <TextView
-            android:id="@+id/birthdayTextView"
+            android:id="@+id/nameTextView"
             style="@style/TextViewRegisterStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_up_birthday_date" />
+            android:text="Никнейм" />
 
         <EditText
-            android:id="@+id/birthdayEditText"
+            android:id="@+id/nameEditText"
             style="@style/EditTextRegisterStyle"
             android:drawableStart="@drawable/ic_date"
-            android:hint="@string/sign_up_example_birthday_date"
-            android:inputType="date"
+            android:hint="Никнейм"
+            android:inputType="text"
             android:textColorHint="@color/editTextColor" />
 
         <TextView
@@ -115,6 +115,7 @@
                 android:drawableStart="@drawable/ic_lock"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <TextView
             android:id="@+id/forgetPasswordTextView"
