@@ -119,14 +119,22 @@ class AccountHelper(private val act: RegisterActivity) {
                                 if (setTask.isSuccessful) {
                                     saveData(email, nickname, imageURL)
                                 } else {
-                                    showErrorToast("Ошибка сохранения данных о пользователе: ${setTask.exception?.message}")
+                                    showErrorToast(
+                                        act.getString(
+                                            R.string.sign_up_error_save,
+                                            setTask.exception?.message
+                                        ))
                                 }
                             }
                     } else {
                         getData(task)
                     }
                 } else {
-                    showErrorToast("Ошибка проверки данных о пользователе: ${dataTask.exception?.message}")
+                    showErrorToast(
+                        act.getString(
+                            R.string.sign_up_error_check,
+                            dataTask.exception?.message
+                        ))
                 }
             }
         }
@@ -162,7 +170,7 @@ class AccountHelper(private val act: RegisterActivity) {
 
                     saveData(userEmail, userNickname, imageUrl)
                 } else {
-                    showErrorToast("Произошла ошибка при получении данных")
+                    showErrorToast(act.getString(R.string.sign_up_error_get))
                 }
             }
         }

@@ -16,6 +16,9 @@
     <string name="sign_up">Зарегистрироваться</string>
     <string name="sign_up_error_empty">Вы не заполнили все поля для регистрации!</string>
     <string name="sign_up_error_firebase">При создании вашего аккаунта произошла ошибка. Повторите еще раз</string>
+    <string name="sign_up_error_save">Ошибка сохранения данных о пользователе: %1$s</string>
+    <string name="sign_up_error_check">Ошибка проверки данных о пользователе: %1$s</string>
+    <string name="sign_up_error_get">Произошла ошибка при получении данных</string>
     <!-- Sign In -->
     <string name="sign_in_with_email">Или войдите по электронной почте</string>
     <string name="sign_in">Войти</string>
@@ -33,6 +36,10 @@
     <!-- Bottom navigation bar -->
     <string name="nav_home">Главная</string>
     <string name="nav_profile">Профиль</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Profile Strings -->
+    <string name="profile_upload_sucsess">Загрузка изображения произошла успешно</string>
+    <string name="profile_upload_error_get_url">Произошла ошибка при получении URL фотографии</string>
+    <string name="profile_upload_error_get">Произошла ошибка при загрузке фотографии</string>
+    <string name="profile_upload_error_not_found">Пользователь не найден</string>
 </resources>
