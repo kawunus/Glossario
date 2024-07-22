@@ -36,6 +36,7 @@
     <!-- Bottom navigation bar -->
     <string name="nav_home">Главная</string>
     <string name="nav_profile">Профиль</string>
+    <string name="nav_library">Библиотека</string>
 
     <!-- Profile Strings -->
     <string name="profile_upload_sucsess">Загрузка изображения произошла успешно</string>

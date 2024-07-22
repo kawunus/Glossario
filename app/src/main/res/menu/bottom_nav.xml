@@ -6,6 +6,10 @@
         android:icon="@drawable/ic_home"
         android:title="@string/nav_home" />
     <item
+        android:id="@+id/library"
+        android:icon="@drawable/ic_library"
+        android:title="@string/nav_library" />
+    <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_person"
         android:title="@string/nav_profile" />
