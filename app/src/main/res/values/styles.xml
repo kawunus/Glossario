@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="registerTextViewStyle" parent="Widget.AppCompat.TextView">
+    <style name="TextViewRegisterStyle" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/yandex_sans_display_regular</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:paddingVertical">6dp</item>
     </style>
 
-    <style name="registerEditTextStyle" parent="Widget.AppCompat.EditText">
+    <style name="EditTextRegisterStyle" parent="Widget.AppCompat.EditText">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@drawable/edit_text_background</item>
@@ -26,16 +26,29 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
-    <style name="regiser_text_style">
+    <style name="TextViewStartStyle">
         <item name="android:textSize">19sp</item>
         <item name="fontFamily">@font/yandex_sans_display_regular</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="button_style" parent="ShapeAppearanceOverlay.Material3.Button">
+    <style name="ButtonStyle" parent="ShapeAppearanceOverlay.Material3.Button">
         <item name="android:fontFamily">@font/yandex_sans_display_regular</item>
         <item name="cornerRadius">8dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:fontFamily">@font/yandex_sans_display_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:iconTint">@color/textColor</item>
+    </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/mainColor</item>
+
     </style>
 </resources>
