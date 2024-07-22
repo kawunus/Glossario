@@ -27,7 +27,7 @@ class AccountHelper(private val act: RegisterActivity) {
             act.mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        sendDataToFirebase(task, nickname, email)
+                        sendDataToFirebase(task, nickname, email, "")
                     } else {
                         showErrorToast(act.getString(R.string.sign_up_error_firebase))
                     }
@@ -71,7 +71,9 @@ class AccountHelper(private val act: RegisterActivity) {
         val credential = GoogleAuthProvider.getCredential(token, null)
         act.mAuth.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                sendDataToFirebase(task, account.displayName!!, account.email!!)
+                sendDataToFirebase(
+                    task, account.displayName!!, account.email!!, account.photoUrl!!.toString()
+                )
             } else {
                 showErrorToast(act.getString(R.string.sign_in_error_google))
             }
@@ -98,7 +100,7 @@ class AccountHelper(private val act: RegisterActivity) {
 
 
     private fun sendDataToFirebase(
-        task: Task<AuthResult>, nickname: String, email: String
+        task: Task<AuthResult>, nickname: String, email: String, imageURL: String
     ) {
         val user = task.result?.user
         user?.let {
@@ -106,20 +108,22 @@ class AccountHelper(private val act: RegisterActivity) {
             val userEmail = it.email
 
             val userMap = mapOf(
-                "email" to userEmail, "nickname" to nickname
+                "email" to userEmail, "nickname" to nickname, "profileImage" to imageURL
             )
-
             act.database.child("users").child(userId).get().addOnCompleteListener { dataTask ->
                 if (dataTask.isSuccessful) {
                     if (!dataTask.result.exists()) {
+
                         act.database.child("users").child(userId).setValue(userMap)
                             .addOnCompleteListener { setTask ->
                                 if (setTask.isSuccessful) {
-                                    saveData(email, nickname)
+                                    saveData(email, nickname, imageURL)
                                 } else {
                                     showErrorToast("Ошибка сохранения данных о пользователе: ${setTask.exception?.message}")
                                 }
                             }
+                    } else {
+                        getData(task)
                     }
                 } else {
                     showErrorToast("Ошибка проверки данных о пользователе: ${dataTask.exception?.message}")
@@ -130,11 +134,12 @@ class AccountHelper(private val act: RegisterActivity) {
     }
 
 
-    private fun saveData(email: String, nickname: String) {
+    private fun saveData(email: String, nickname: String, imageURL: String) {
         act.prefs.edit(commit = true) {
             putString(PrefsKeys.ProfileKeys.USER_STATUS, PrefsKeys.ProfileKeys.UserStatus.REGISTER)
             putString(PrefsKeys.ProfileKeys.USER_EMAIL, email)
             putString(PrefsKeys.ProfileKeys.USER_NICKNAME, nickname)
+            putString(PrefsKeys.ProfileKeys.USER_IMAGE, imageURL)
         }
 
         val intent = Intent(act, MainActivity::class.java)
@@ -153,8 +158,9 @@ class AccountHelper(private val act: RegisterActivity) {
                     val userData = dataTask.result?.getValue<Map<String, String>>()
                     val userEmail = userData!!["email"] as String
                     val userNickname = userData["nickname"] as String
+                    val imageUrl = userData["profileImage"] as String
 
-                    saveData(userEmail, userNickname)
+                    saveData(userEmail, userNickname, imageUrl)
                 } else {
                     showErrorToast("Произошла ошибка при получении данных")
                 }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.kawunus.glossario.databinding.FragmentProfileBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +36,7 @@ class Profile : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -46,9 +47,13 @@ class Profile : Fragment() {
         emailTextView.text = prefs.getString(
             PrefsKeys.ProfileKeys.USER_NICKNAME, PrefsKeys.ProfileKeys.UserStatus.NOT_REGISTER
         )
+        val imageUrl = prefs.getString(PrefsKeys.ProfileKeys.USER_IMAGE, "") as String
+        if (imageUrl.isNotEmpty()) {
+            Glide.with(this@Profile).load(imageUrl).into(profileImageView)
+        }
     }
 
-    fun init() {
+    private fun init() {
         activity?.let {
             prefs = it.getSharedPreferences("profile", Context.MODE_PRIVATE)
         }
