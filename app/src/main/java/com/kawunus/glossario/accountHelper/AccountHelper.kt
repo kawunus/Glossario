@@ -12,7 +12,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.getValue
 import com.kawunus.glossario.MainActivity
-import com.kawunus.glossario.PrefsKeys
+import com.kawunus.glossario.ProfileKeys
 import com.kawunus.glossario.R
 import com.kawunus.glossario.RegisterActivity
 
@@ -144,10 +144,10 @@ class AccountHelper(private val act: RegisterActivity) {
 
     private fun saveData(email: String, nickname: String, imageURL: String) {
         act.prefs.edit(commit = true) {
-            putString(PrefsKeys.ProfileKeys.USER_STATUS, PrefsKeys.ProfileKeys.UserStatus.REGISTER)
-            putString(PrefsKeys.ProfileKeys.USER_EMAIL, email)
-            putString(PrefsKeys.ProfileKeys.USER_NICKNAME, nickname)
-            putString(PrefsKeys.ProfileKeys.USER_IMAGE, imageURL)
+            putString(ProfileKeys.USER_STATUS, ProfileKeys.UserStatus.REGISTER)
+            putString(ProfileKeys.USER_EMAIL, email)
+            putString(ProfileKeys.USER_NICKNAME, nickname)
+            putString(ProfileKeys.USER_IMAGE, imageURL)
         }
 
         val intent = Intent(act, MainActivity::class.java)

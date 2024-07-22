@@ -82,9 +82,9 @@ class Profile : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
         emailTextView.text = prefs.getString(
-            PrefsKeys.ProfileKeys.USER_NICKNAME, PrefsKeys.ProfileKeys.UserStatus.NOT_REGISTER
+            ProfileKeys.USER_NICKNAME, ProfileKeys.UserStatus.NOT_REGISTER
         )
-        val imageUrl = prefs.getString(PrefsKeys.ProfileKeys.USER_IMAGE, "") as String
+        val imageUrl = prefs.getString(ProfileKeys.USER_IMAGE, "") as String
         if (imageUrl.isNotEmpty()) {
             Glide.with(this@Profile).load(imageUrl).into(profileImageView)
         }
@@ -122,7 +122,7 @@ class Profile : Fragment() {
                             FirebaseDatabase.getInstance().getReference("users").child(uid)
                                 .child("profileImage").setValue(downloadUri.toString())
                             prefs.edit(commit = true) {
-                                putString(PrefsKeys.ProfileKeys.USER_IMAGE, downloadUri.toString())
+                                putString(ProfileKeys.USER_IMAGE, downloadUri.toString())
                             }
                         } else {
                             Toast.makeText(
