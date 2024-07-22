@@ -75,7 +75,7 @@
         <EditText
             android:id="@+id/nameEditText"
             style="@style/EditTextRegisterStyle"
-            android:drawableStart="@drawable/ic_date"
+            android:drawableStart="@drawable/ic_person_19"
             android:hint="Никнейм"
             android:inputType="text"
             android:textColorHint="@color/editTextColor" />
