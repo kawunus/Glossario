@@ -68,6 +68,7 @@ class RegisterActivity : AppCompatActivity() {
         signUpButton.setText(R.string.sign_in)
         nameEditText.visibility = View.GONE
         nameTextView.visibility = View.GONE
+        toolbar.setTitle(R.string.sign_in_toolbar_title)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

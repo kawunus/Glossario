@@ -51,4 +51,23 @@
         <item name="android:background">@color/mainColor</item>
 
     </style>
+
+    <style name="TextViewToolbarStyle">
+        <item name="android:textSize">19sp</item>
+        <item name="fontFamily">@font/yandex_sans_display_regular</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="TextViewSettingsStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="fontFamily">@font/yandex_sans_display_regular</item>
+        <item name="android:drawableTint">@color/editTextColor</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">20dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>

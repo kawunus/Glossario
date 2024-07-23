@@ -19,6 +19,8 @@
     <string name="sign_up_error_save">Ошибка сохранения данных о пользователе: %1$s</string>
     <string name="sign_up_error_check">Ошибка проверки данных о пользователе: %1$s</string>
     <string name="sign_up_error_get">Произошла ошибка при получении данных</string>
+    <string name="sign_up_nickname">Никнейм</string>
+    <string name="sign_up_toolbar_title">Регистрация</string>
     <!-- Sign In -->
     <string name="sign_in_with_email">Или войдите по электронной почте</string>
     <string name="sign_in">Войти</string>
@@ -26,6 +28,7 @@
     <string name="sign_in_error_empty">Вы не заполнили все поля для входа!</string>
     <string name="sign_in_error_firebase">При входе в ваш аккаунт произошла ошибка. Повторите еще раз</string>
     <string name="sign_in_error_google">Произошла ошибка при входе по Google аккаунту. Попробуйте снова!</string>
+    <string name="sign_in_toolbar_title">Вход</string>
     <!-- Reset Strings -->
     <string name="reset_empty">Пожалуйста, укажите вашу почту</string>
     <string name="reset_error_firebase">Произошла ошибка при отправке ссылки-сброса на ваш email!</string>
@@ -43,4 +46,6 @@
     <string name="profile_upload_error_get_url">Произошла ошибка при получении URL фотографии</string>
     <string name="profile_upload_error_get">Произошла ошибка при загрузке фотографии</string>
     <string name="profile_upload_error_not_found">Пользователь не найден</string>
+    <string name="profile_settings">Настройки</string>
+
 </resources>
