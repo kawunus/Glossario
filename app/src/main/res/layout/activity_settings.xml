@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:navigationIcon="@drawable/ic_arrow"
+            android:title="@string/profile_settings"
+            android:titleTextAppearance="@style/TextViewToolbarStyle" />
+
+        <TextView
+            style="@style/TextViewToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:text="Настройки приложения" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/themeSwitcher1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yandex_sans_display_regular"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="20dp"
+            android:text="Тёмная тема"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            android:thumbTintMode="screen"
+            app:thumbTint="@color/thumbColor"
+            app:trackTint="@color/trackColor" />
+
+        <TextView
+            style="@style/TextViewToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="10dp"
+            android:text="Помощь и обратная связь" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shareView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_share"
+            android:text="Поделиться приложением" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/supportView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_mail_24"
+            android:text="Написать нам на почту" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/telegramView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_telegram"
+            android:text="Telegram-канал разработчика" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/gitView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_git"
+            android:text="Github проекта" />
+
+    </LinearLayout>
+
+</ScrollView>

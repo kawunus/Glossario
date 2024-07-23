@@ -1,17 +1,20 @@
 package com.kawunus.glossario
 
+import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.kawunus.glossario.accountHelper.AccountHelper
-import com.kawunus.glossario.accountHelper.GoogleConst
 import com.kawunus.glossario.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -20,6 +23,27 @@ class RegisterActivity : AppCompatActivity() {
     val mAuth = FirebaseAuth.getInstance()
     private val helper = AccountHelper(this)
     val database = FirebaseDatabase.getInstance().reference
+
+    val activityResultLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                if (account != null) {
+                    helper.signInFirebaseWithGoogle(account.idToken!!, account)
+
+                }
+            } catch (e: ApiException) {
+                Toast.makeText(
+                    this@RegisterActivity, "Ошибка: ${e.message}", Toast.LENGTH_LONG
+                ).show()
+
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
@@ -68,25 +92,7 @@ class RegisterActivity : AppCompatActivity() {
         signUpButton.setText(R.string.sign_in)
         nameEditText.visibility = View.GONE
         nameTextView.visibility = View.GONE
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == GoogleConst.GOOGLE_SIGN_IN_REQUEST_CODE) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account = task.getResult(ApiException::class.java)
-                if (account != null) {
-                    helper.signInFirebaseWithGoogle(account.idToken!!, account!!)
-
-                }
-            } catch (e: ApiException) {
-                Toast.makeText(
-                    this@RegisterActivity, "Ошибка: ${e.message}", Toast.LENGTH_LONG
-                ).show()
-
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data)
+        toolbar.setTitle(R.string.sign_in_toolbar_title)
     }
 
 }

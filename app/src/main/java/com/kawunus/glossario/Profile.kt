@@ -92,6 +92,10 @@ class Profile : Fragment() {
         profileImageView.setOnClickListener {
             selectImage()
         }
+        settinsButton.setOnClickListener {
+            val intent = Intent(activity, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun init() {
@@ -139,8 +143,9 @@ class Profile : Fragment() {
                 }
             }
         } else {
-            Toast.makeText(context,
-                getString(R.string.profile_upload_error_not_found), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                context, getString(R.string.profile_upload_error_not_found), Toast.LENGTH_LONG
+            ).show()
         }
     }
 

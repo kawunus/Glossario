@@ -10,4 +10,6 @@
     <color name="forgetPassword">#0645AD</color>
     <color name="backgroundColor">#000000</color>
     <color name="textColor">#FFFFFF</color>
+    <color name="thumbColor">#3772E7</color>
+    <color name="trackColor">#9FBBF3</color>
 </resources>
