@@ -48,4 +48,10 @@
     <string name="profile_upload_error_not_found">Пользователь не найден</string>
     <string name="profile_settings">Настройки</string>
 
+    <!-- Settings Strings -->
+    <string name="settings_share_message">Текст поделиться</string>
+    <string name="settings_share_title">Поделиться приложением через:</string>
+    <string name="dev_email">s.markovtsev@gmail.com</string>
+    <string name="settings_git">https://github.com/kawunus/Glossario</string>
+    <string name="settings_chanel">https://t.me/+sOk1Kf3Wna5lOWYy</string>
 </resources>
