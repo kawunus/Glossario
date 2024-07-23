@@ -139,8 +139,10 @@ class Profile : Fragment() {
                 }
             }
         } else {
-            Toast.makeText(context,
-                getString(R.string.profile_upload_error_not_found), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                context,
+                getString(R.string.profile_upload_error_not_found), Toast.LENGTH_LONG
+            ).show()
         }
     }
 
