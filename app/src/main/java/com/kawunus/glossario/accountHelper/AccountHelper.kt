@@ -57,7 +57,7 @@ class AccountHelper(private val act: RegisterActivity) {
     fun signInWithGoogle() {
         signInClient = getSignInClient()
         val intent = signInClient.signInIntent
-        act.startActivityForResult(intent, GoogleConst.GOOGLE_SIGN_IN_REQUEST_CODE)
+        act.activityResultLauncher.launch(intent)
     }
 
     fun signInFirebaseWithGoogle(token: String, account: GoogleSignInAccount) {

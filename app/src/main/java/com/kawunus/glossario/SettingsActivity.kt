@@ -48,7 +48,7 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 
-    fun init() {
+    private fun init() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
     }
 }
