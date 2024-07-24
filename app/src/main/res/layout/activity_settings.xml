@@ -30,6 +30,39 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
+            android:text="Персональные настройки" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/changeNicknameView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_arrow_forward"
+            android:text="Поделиться приложением" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/changePasswordView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_arrow_forward"
+            android:text="Сменить пароль" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/deleteAccountView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_trash"
+            android:text="Удалить аккаунт" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/logOutView"
+            style="@style/TextViewSettingsStyle"
+            android:drawableEnd="@drawable/ic_log_out"
+            android:text="Выйти из аккаунта" />
+
+
+        <TextView
+            style="@style/TextViewToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="10dp"
             android:text="Настройки приложения" />
 
         <androidx.appcompat.widget.SwitchCompat
