@@ -1,4 +1,4 @@
-package com.kawunus.glossario
+package com.kawunus.glossario.ui.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -14,6 +14,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.kawunus.glossario.R
 import com.kawunus.glossario.accountHelper.AccountHelper
 import com.kawunus.glossario.databinding.ActivityRegisterBinding
 

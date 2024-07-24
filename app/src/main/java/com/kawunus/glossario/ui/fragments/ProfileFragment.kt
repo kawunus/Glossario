@@ -1,9 +1,7 @@
-package com.kawunus.glossario
+package com.kawunus.glossario.ui.fragments
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
@@ -15,30 +13,19 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.kawunus.glossario.R
+import com.kawunus.glossario.data.preferences.UserSharedPreferences
 import com.kawunus.glossario.databinding.FragmentProfileBinding
+import com.kawunus.glossario.ui.activities.SettingsActivity
 import java.io.IOException
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Profile.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Profile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private lateinit var prefs: SharedPreferences
+class ProfileFragment : Fragment() {
+    private lateinit var userSharedPreferences: UserSharedPreferences
     private lateinit var binding: FragmentProfileBinding
     private lateinit var filepath: Uri
     private val pickImageActivityResultLauncher: ActivityResultLauncher<Intent> =
@@ -63,14 +50,6 @@ class Profile : Fragment() {
         }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -81,12 +60,10 @@ class Profile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        emailTextView.text = prefs.getString(
-            ProfileKeys.USER_NICKNAME, ProfileKeys.UserStatus.NOT_REGISTER
-        )
-        val imageUrl = prefs.getString(ProfileKeys.USER_IMAGE, "") as String
+        emailTextView.text = userSharedPreferences.getNickname()
+        val imageUrl = userSharedPreferences.getImage() as String
         if (imageUrl.isNotEmpty()) {
-            Glide.with(this@Profile).load(imageUrl).into(profileImageView)
+            Glide.with(this@ProfileFragment).load(imageUrl).into(profileImageView)
         }
 
         profileImageView.setOnClickListener {
@@ -99,9 +76,7 @@ class Profile : Fragment() {
     }
 
     private fun init() {
-        activity?.let {
-            prefs = it.getSharedPreferences("profile", Context.MODE_PRIVATE)
-        }
+        userSharedPreferences = UserSharedPreferences(requireActivity())
     }
 
     private fun selectImage() {
@@ -125,9 +100,7 @@ class Profile : Fragment() {
                             val downloadUri = urlTask.result
                             FirebaseDatabase.getInstance().getReference("users").child(uid)
                                 .child("profileImage").setValue(downloadUri.toString())
-                            prefs.edit(commit = true) {
-                                putString(ProfileKeys.USER_IMAGE, downloadUri.toString())
-                            }
+                            userSharedPreferences.setImage(downloadUri.toString())
                         } else {
                             Toast.makeText(
                                 context,
@@ -146,25 +119,6 @@ class Profile : Fragment() {
             Toast.makeText(
                 context, getString(R.string.profile_upload_error_not_found), Toast.LENGTH_LONG
             ).show()
-        }
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) = Profile().apply {
-            arguments = Bundle().apply {
-                putString(ARG_PARAM1, param1)
-                putString(ARG_PARAM2, param2)
-            }
         }
     }
 }
