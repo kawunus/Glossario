@@ -5,11 +5,11 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.kawunus.glossario.ui.fragments.Home
-import com.kawunus.glossario.ui.fragments.Profile
+import com.kawunus.glossario.ui.fragments.ProfileFragment
 import com.kawunus.glossario.ProfileKeys
 import com.kawunus.glossario.R
 import com.kawunus.glossario.databinding.ActivityMainBinding
+import com.kawunus.glossario.ui.fragments.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         init()
         setContentView(binding.root)
-        replaceFragment(Home())
+        replaceFragment(HomeFragment())
         if (prefs.getString(
                 ProfileKeys.USER_STATUS,
                 ProfileKeys.UserStatus.NOT_REGISTER
@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
 
-                R.id.home -> replaceFragment(Home())
-                R.id.profile -> replaceFragment(Profile())
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.profile -> replaceFragment(ProfileFragment())
 
                 else -> {
 

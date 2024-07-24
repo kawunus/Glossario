@@ -27,7 +27,7 @@ import com.kawunus.glossario.databinding.FragmentProfileBinding
 import com.kawunus.glossario.ui.activities.SettingsActivity
 import java.io.IOException
 
-class Profile : Fragment() {
+class ProfileFragment : Fragment() {
     private lateinit var prefs: SharedPreferences
     private lateinit var binding: FragmentProfileBinding
     private lateinit var filepath: Uri
@@ -69,7 +69,7 @@ class Profile : Fragment() {
         )
         val imageUrl = prefs.getString(ProfileKeys.USER_IMAGE, "") as String
         if (imageUrl.isNotEmpty()) {
-            Glide.with(this@Profile).load(imageUrl).into(profileImageView)
+            Glide.with(this@ProfileFragment).load(imageUrl).into(profileImageView)
         }
 
         profileImageView.setOnClickListener {
