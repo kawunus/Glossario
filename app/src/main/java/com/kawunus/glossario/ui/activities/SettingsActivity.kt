@@ -1,9 +1,10 @@
-package com.kawunus.glossario
+package com.kawunus.glossario.ui.activities
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.kawunus.glossario.R
 import com.kawunus.glossario.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {

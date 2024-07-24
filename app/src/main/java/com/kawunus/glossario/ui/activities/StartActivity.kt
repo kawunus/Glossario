@@ -1,4 +1,4 @@
-package com.kawunus.glossario
+package com.kawunus.glossario.ui.activities
 
 import android.content.Intent
 import android.os.Bundle

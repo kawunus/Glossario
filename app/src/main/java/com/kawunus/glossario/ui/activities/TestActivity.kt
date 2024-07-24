@@ -1,4 +1,4 @@
-package com.kawunus.glossario
+package com.kawunus.glossario.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,7 @@ class TestActivity : AppCompatActivity() {
 
     }
 
-    private fun init(){
-
+    private fun init() {
+        binding = ActivityTestBinding.inflate(layoutInflater)
     }
 }

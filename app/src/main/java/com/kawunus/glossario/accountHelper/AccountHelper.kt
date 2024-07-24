@@ -7,7 +7,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.GoogleAuthProvider
 import com.kawunus.glossario.R
-import com.kawunus.glossario.RegisterActivity
+import com.kawunus.glossario.ui.activities.RegisterActivity
 
 
 class AccountHelper(private val act: RegisterActivity) {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context=".ui.activities.RegisterActivity">
 
     <Toolbar
         android:id="@+id/toolbar"
