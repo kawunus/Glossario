@@ -54,4 +54,16 @@
     <string name="dev_email">s.markovtsev@gmail.com</string>
     <string name="settings_git">https://github.com/kawunus/Glossario</string>
     <string name="settings_chanel">https://t.me/+sOk1Kf3Wna5lOWYy</string>
+    <string name="settings_personal">Персональные настройки</string>
+    <string name="settings_change_nickname">Сменить никнейм</string>
+    <string name="settings_change_password">Сменить пароль</string>
+    <string name="settings_delete_account">Удалить аккаунт</string>
+    <string name="settings_sign_out">Выйти из аккаунта</string>
+    <string name="settings_app">Настройки приложения</string>
+    <string name="settings_dark_theme">Тёмная тема</string>
+    <string name="settings_support">Помощь и обратная связь</string>
+    <string name="settings_share">Поделиться приложением</string>
+    <string name="settings_write_to_email">Написать нам на почту</string>
+    <string name="settings_telegram">Telegram-канал разработчика</string>
+    <string name="settings_github">Github проекта</string>
 </resources>

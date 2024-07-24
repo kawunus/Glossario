@@ -3,13 +3,13 @@ package com.kawunus.glossario.accountHelper
 import android.app.Activity
 import android.content.Intent
 import android.widget.Toast
-import androidx.core.content.edit
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.database.getValue
-import com.kawunus.glossario.ui.activities.MainActivity
 import com.kawunus.glossario.ProfileKeys
 import com.kawunus.glossario.R
+import com.kawunus.glossario.data.preferences.UserSharedPreferences
+import com.kawunus.glossario.ui.activities.MainActivity
 import com.kawunus.glossario.ui.activities.RegisterActivity
 
 class DataHandler {
@@ -36,7 +36,7 @@ class DataHandler {
                         act.database.child("users").child(userId).setValue(userMap)
                             .addOnCompleteListener { setTask ->
                                 if (setTask.isSuccessful) {
-                                    saveDataToPrefs(email, nickname, imageURL, act)
+                                    confirmAccount(email, nickname, imageURL, act)
                                 } else {
                                     showErrorToast(
                                         act.getString(
@@ -59,13 +59,9 @@ class DataHandler {
         }
     }
 
-    fun saveDataToPrefs(email: String, nickname: String, imageUrl: String, act: RegisterActivity) {
-        act.prefs.edit(commit = true) {
-            putString(ProfileKeys.USER_STATUS, ProfileKeys.UserStatus.REGISTER)
-            putString(ProfileKeys.USER_EMAIL, email)
-            putString(ProfileKeys.USER_NICKNAME, nickname)
-            putString(ProfileKeys.USER_IMAGE, imageUrl)
-        }
+    private fun confirmAccount(email: String, nickname: String, imageUrl: String, act: RegisterActivity) {
+        val userSharedPreferences = UserSharedPreferences(act)
+        userSharedPreferences.saveUser(email, ProfileKeys.UserStatus.REGISTER, nickname, imageUrl)
 
         val intent = Intent(act, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -74,6 +70,7 @@ class DataHandler {
     }
 
     fun getDataFromFirebase(task: Task<AuthResult>, act: RegisterActivity) {
+
         val user = task.result.user
         user?.let {
             val userId = it.uid
@@ -85,7 +82,7 @@ class DataHandler {
                     val userNickname = userData["nickname"] as String
                     val imageUrl = userData["profileImage"] as String
 
-                    saveDataToPrefs(userEmail, userNickname, imageUrl, act)
+                    confirmAccount(userEmail, userNickname, imageUrl, act)
                 } else {
                     showErrorToast(act.getString(R.string.sign_up_error_get), act)
                 }

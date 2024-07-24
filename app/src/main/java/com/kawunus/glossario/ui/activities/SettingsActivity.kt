@@ -1,17 +1,14 @@
 package com.kawunus.glossario.ui.activities
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.edit
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.kawunus.glossario.R
+import com.kawunus.glossario.data.preferences.UserSharedPreferences
 import com.kawunus.glossario.databinding.ActivitySettingsBinding
 
 
@@ -74,37 +71,15 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun logOut() {
-        val prefs: SharedPreferences = getSharedPreferences("profile", MODE_PRIVATE)
-        prefs.edit(commit = true) {
-            clear()
-            finishAffinity()
-        }
+        val userSharedPreferences = UserSharedPreferences(this@SettingsActivity)
+        val mAuth = FirebaseAuth.getInstance()
+        mAuth.signOut()
+        userSharedPreferences.clear()
+        finishAffinity()
     }
 
     private fun init() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
     }
 
-    private fun deleteFolder(ref: StorageReference) {
-        ref.listAll().addOnSuccessListener { listResult ->
-            for (fileRef in listResult.items) {
-                fileRef.delete().addOnSuccessListener {
-                    Log.d(
-                        "DeleteFile", "File deleted successfully"
-                    )
-                }.addOnFailureListener { exception ->
-                    Log.e(
-                        "DeleteFile", "Error deleting file", exception
-                    )
-                }
-            }
-            for (folderRef in listResult.prefixes) {
-                deleteFolder(folderRef)
-            }
-        }.addOnFailureListener { exception ->
-            Log.e(
-                "ListAll", "Error listing items", exception
-            )
-        }
-    }
 }
