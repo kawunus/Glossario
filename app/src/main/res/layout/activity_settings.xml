@@ -36,24 +36,28 @@
             android:id="@+id/changeNicknameView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_arrow_forward"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Поделиться приложением" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/changePasswordView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_arrow_forward"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Сменить пароль" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/deleteAccountView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_trash"
+            android:drawableTint="@color/trashIconColor"
             android:text="Удалить аккаунт" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/logOutView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_log_out"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Выйти из аккаунта" />
 
 
@@ -92,24 +96,28 @@
             android:id="@+id/shareView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_share"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Поделиться приложением" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/supportView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_mail_24"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Написать нам на почту" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/telegramView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_telegram"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Telegram-канал разработчика" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/gitView"
             style="@style/TextViewSettingsStyle"
             android:drawableEnd="@drawable/ic_git"
+            android:drawableTint="@color/settingsIconColor"
             android:text="Github проекта" />
 
     </LinearLayout>

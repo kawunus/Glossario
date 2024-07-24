@@ -12,4 +12,6 @@
     <color name="textColor">#000000</color>
     <color name="thumbColor">#AEAFB4</color>
     <color name="trackColor">#E6E8EB</color>
+    <color name="trashIconColor">#B00000</color>
+    <color name="settingsIconColor">#AEAFB4</color>
 </resources>
