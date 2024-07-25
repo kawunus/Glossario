@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.kawunus.glossario.App
 import com.kawunus.glossario.R
 import com.kawunus.glossario.data.preferences.UserSharedPreferences
 import com.kawunus.glossario.databinding.ActivitySettingsBinding
@@ -14,6 +15,7 @@ import com.kawunus.glossario.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingsBinding
+    private lateinit var userSharedPreferences: UserSharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
@@ -68,6 +70,11 @@ class SettingsActivity : AppCompatActivity() {
                 logOut()
             }
         }
+
+        binding.themeSwitcher.isChecked = userSharedPreferences.getTheme()
+        binding.themeSwitcher.setOnCheckedChangeListener { _, checked ->
+            (applicationContext as App).switchTheme(checked)
+        }
     }
 
     private fun logOut() {
@@ -80,6 +87,7 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun init() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
+        userSharedPreferences = UserSharedPreferences(this@SettingsActivity)
     }
 
 }

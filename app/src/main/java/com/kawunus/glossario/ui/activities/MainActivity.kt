@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.kawunus.glossario.ProfileKeys
+import com.kawunus.glossario.data.preferences.ProfileKeys
 import com.kawunus.glossario.R
 import com.kawunus.glossario.data.preferences.UserSharedPreferences
 import com.kawunus.glossario.databinding.ActivityMainBinding

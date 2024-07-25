@@ -3,15 +3,11 @@ package com.kawunus.glossario.data.preferences
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.kawunus.glossario.ProfileKeys
 
 class UserSharedPreferences(context: Context) {
 
-    private var sharedPreferences: SharedPreferences
-
-    init {
-        sharedPreferences = context.getSharedPreferences("profile", Context.MODE_PRIVATE)
-    }
+    private var sharedPreferences: SharedPreferences =
+        context.getSharedPreferences("profile", Context.MODE_PRIVATE)
 
     fun setRegisterStatus(status: String) {
         sharedPreferences.edit(commit = true) {
@@ -63,7 +59,11 @@ class UserSharedPreferences(context: Context) {
         setNickname(nickname)
     }
 
-    fun getUser() {
-
+    fun setTheme(darkTheme: Boolean) {
+        sharedPreferences.edit(commit = true) {
+            putBoolean(ProfileKeys.DARK_THEME, darkTheme)
+        }
     }
+
+    fun getTheme(): Boolean = sharedPreferences.getBoolean(ProfileKeys.DARK_THEME, false)
 }

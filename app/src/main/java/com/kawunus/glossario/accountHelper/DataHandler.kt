@@ -6,7 +6,7 @@ import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.database.getValue
-import com.kawunus.glossario.ProfileKeys
+import com.kawunus.glossario.data.preferences.ProfileKeys
 import com.kawunus.glossario.R
 import com.kawunus.glossario.data.preferences.UserSharedPreferences
 import com.kawunus.glossario.ui.activities.MainActivity
